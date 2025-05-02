@@ -4,7 +4,7 @@ const cors = require('cors')
 const app = express()
 
 app.use(express.json()) // 🔧 This is required to parse JSON request bodies
-
+app.use(express.static('dist'))
 // Register custom token
 morgan.token('postData', (req) => {
     return req.method === 'POST' ? JSON.stringify(req.body) : ''
